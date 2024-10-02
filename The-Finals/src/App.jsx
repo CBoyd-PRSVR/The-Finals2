@@ -1,16 +1,26 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import CardList from "./components/CardList";
-import CardDetails from "./components/CardDetails";
-import "./App.css";
+import './App.css';
+import {Route, Routes } from 'react-router-dom'; //Necessary router components
+import Home from "./components/Home";
+import Products from "./components/Products";
+import ProductDetails from "./components/ProductDetails";
+
+
 
 function App() {
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<CardList />} />
-        <Route path="/details/:id" element={<CardDetails />} />
-      </Routes>
-    </Router>
+    <div>
+        <main>
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route path="/products" element={<Products />} />
+            <Route path="/product-details/:id" element={<ProductDetails />} />
+            </Routes>
+        </main>
+      
+    </div>
+      
+  
   );
 }
 
